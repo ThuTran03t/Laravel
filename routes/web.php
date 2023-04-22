@@ -31,3 +31,5 @@ Route::get('/xinchao', [Usercontroller::class, 'xinchao']);
 
 
 /*bai tap ve nha cua thay Dinh */
+Route::get('/tong', [App\Http\Controllers\TinhTongController::class, 'index']);
+Route::post('/tong', [App\Http\Controllers\TinhTongController::class, 'Summ']);

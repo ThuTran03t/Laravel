@@ -1,23 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Tính tổng</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <title>SUM</title>
 </head>
+
 <body>
-    <h1>Tính tổng hai số</h1>
-    <form method="POST" action="{{ route('calculate') }}">
+    <form method="post">
         @csrf
-        <label for="num1">Nhập số thứ nhất:</label>
-        <input type="text" id="num1" name="num1"><br>
-
-        <label for="num2">Nhập số thứ hai:</label>
-        <input type="text" id="num2" name="num2"><br>
-
-        <input type="submit" value="Tính tổng">
+        <legend>SUM A AND B</legend>
+        <div class="mb-3">
+            <label for="disabledTextInput" class="form-label">Enter number A:</label>
+            <input type="text" id="disabledTextInput" class="form-control" placeholder="Number A" name="numberA">
+        </div>
+        <div class="mb-3">
+            <label for="disabledSelect" class="form-label">Enter number B:</label>
+            <input type="text" id="disabledTextInput" class="form-control" placeholder="Number B" name="numberB">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <h1>
+            <?php if (isset($result)) {
+                echo $result;
+            } 
+            ?>
+        </h1>
     </form>
 
-    @if(isset($result))
-        <p>Tổng của {{ $num1 }} và {{ $num2 }} là: {{ $result }}</p>
-    @endif
+
 </body>
+
 </html>
