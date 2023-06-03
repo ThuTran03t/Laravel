@@ -1,59 +1,44 @@
-<!-- resources/views/form.blade.php -->
-
-<!-- @extends('layouts.app') -->
-
-@section('content')
-    <h1>Form</h1>
-
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-    <form method="post" action="{{ route('submit-form') }}">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+</head>
+<body>
+    <form method="POST" action="{{ route('submit-form') }}" style="width: 600px; margin- left: 650px">
         @csrf
         <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required>
         </div>
-        <div class="form-group">
-            <label for="age">Age</label>
-            <input type="number" class="form-control" id="age" name="age" required>
-        </div>
-        <div class="form-group">
-            <label for="dob">Date of birth</label>
-            <input type="date" class="form-control" id="dob" name="dob" required>
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone number</label>
-            <input type="tel" class="form-control" id="phone" name="phone" required>
-        </div>
-        <div class="form-group">
-            <label for="address">Address</label>
-            <input type="text" class="form-control" id="address" name="address" required>
-        </div>
-        <div class="form-group">
-            <label for="website">Website</label>
-            <input type="url" class="form-control" id="website" name="website" required>
-        </div>
-        <div>
-            @include ('block.error')
-</div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
 
-    @if (session('data'))
-        <h2>Result</h2>
-        <p>Name: {{ session('data.name') }}</p>
-        <p>Age: {{ session('data.age') }}</p>
-        <p>Date of birth: {{ session('data.dob') }}</p>
-        <p>Phone number: {{ session('data.phone') }}</p>
-        <p>Address: {{ session('data.address') }}</p>
-        <p>Website: {{ session('data.website') }}</p>
-    @endif
-@endsection
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age" required> 
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date:</label>
+            <input type="date" name="dob" id="dob" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" name="phone" id="phone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="website">Website:</label>
+            <input type="url" name="website" id="website" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea name="address" id="address" rows="3" required></textarea>
+        </div>
+
+        <div  class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>

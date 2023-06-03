@@ -64,7 +64,6 @@
 										</div>
 									</div>
 								</div>
-
 								<div class="cart-item">
 									<div class="media">
 										<a class="pull-left" href="#"><img src="assets/dest/images/products/cart/2.png" alt=""></a>

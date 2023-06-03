@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+        Schema::create('order_details', function(Blueprint $table){
+            $table->unsignedbigInteger('product_id');
+            $table->unsignedbigInteger('order_id');
+            $table->foreign('product_id')->references('product_id')->on('products');
+            $table->foreign('order_id')->references('order_id')->on('orders');
+            $table->integer('quantity');
+            $table->integer('unit_price');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        //
     }
 };

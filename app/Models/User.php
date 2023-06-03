@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+// namespace là khai báo nới mà Models được tạo ra
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -42,3 +43,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+// ORM: object relationship model 
